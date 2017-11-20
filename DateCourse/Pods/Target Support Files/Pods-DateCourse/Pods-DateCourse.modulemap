@@ -1,0 +1,6 @@
+framework module Pods_DateCourse {
+  umbrella header "Pods-DateCourse-umbrella.h"
+
+  export *
+  module * { export * }
+}

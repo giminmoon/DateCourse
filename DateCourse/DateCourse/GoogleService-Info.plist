@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>170134321915-kklu80bcm1lu3q7g9jlvou03mhe26u8a.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.170134321915-kklu80bcm1lu3q7g9jlvou03mhe26u8a</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB_ExBsK6zjHw6ot7QT6SPKPg2l3sb-0iM</string>
+	<key>GCM_SENDER_ID</key>
+	<string>170134321915</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>moon.DateCourse</string>
+	<key>PROJECT_ID</key>
+	<string>datecourse-app</string>
+	<key>STORAGE_BUCKET</key>
+	<string>datecourse-app.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:170134321915:ios:4b9abbbc76c7204d</string>
+	<key>DATABASE_URL</key>
+	<string>https://datecourse-app.firebaseio.com</string>
+</dict>
+</plist>
