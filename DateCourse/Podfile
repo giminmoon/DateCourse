@@ -12,6 +12,10 @@ target 'DateCourse' do
   pod 'FacebookCore'
   pod 'FacebookLogin'
   pod 'TwitterKit'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
+  pod 'GooglePlacePicker'
+
 
   # Pods for DateCourse
 

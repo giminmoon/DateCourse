@@ -18,8 +18,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameField.delegate = self
-        passwordField.delegate = self
+        self.usernameField.delegate = self
+        self.passwordField.delegate = self
+        self.reenterPasswordField.delegate = self
+        self.hidKeyBoardWhenTapped()
+        
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +34,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func cancelButtonTapped(_ sender: Any) {
         //dismiss when its tapped
         dismiss(animated: true, completion: nil)
+        print("hi")
     }
     @IBAction func createAccountTapped(_ sender: Any) {
         if passwordField.text == reenterPasswordField.text{
@@ -90,6 +94,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         } else{
             textField.resignFirstResponder()
         }
+        
         return true
     }
 
@@ -102,12 +107,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
 
 // extension to get keyboard out of the way
 extension UIViewController{
-    func hidKeyBoardWhenTApped(){
+    func hidKeyBoardWhenTapped(){
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
         view.addGestureRecognizer(tap)

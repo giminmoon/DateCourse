@@ -15,13 +15,13 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     
-    // ask Jason ! - var userID = Auth.auth().currentUser?.uid
+    //var userID = Auth.auth().currentUser?.uid
     
     override func viewDidLoad() {
         super.viewDidLoad()
         usernameField.delegate = self
         passwordField.delegate = self
-        self.hidKeyBoardWhenTApped()
+        self.hidKeyBoardWhenTapped()
     }
 
     @IBAction func logInButtonTapped(_ sender: UIButton) {
@@ -36,7 +36,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
             }
             //take user to realtime firebase database
             if user!.isEmailVerified{
-                self.performSegue(withIdentifier: "emailLoggedIn", sender: self)
+                //if logged in, move on to the next viewcontroller
+                //self.performSegue(withIdentifier: "ToHomeScreen", sender: nil)
+                let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+                let homeVC:MainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                self.present(homeVC, animated: true, completion: nil)
             }
             else{
                 let notVerfiedAlert = UIAlertController(title:"Not verified", message: "Your account is pending verification. Please check your email and verify your account.", preferredStyle: .alert)
@@ -60,15 +64,20 @@ class ViewController: UIViewController, UITextFieldDelegate {
             let resetEmail = forgotPwAlert.textFields?.first?.text
             Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: {(error) in
                 if error != nil{
-                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(error?.localizedDescription)", preferredStyle: .alert)
+                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
                     resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(resetFailedAlert, animated: true, completion: nil)
                 }else{
                     let resetEmalSentAlert = UIAlertController(title: "Reset Email Sent", message: "A password reset email has been sent to your registered email. Please check your email for further password reset instructions", preferredStyle: .alert)
+                    
+                    //creates an ok button so when the user taps, the alert goes away
+                    resetEmalSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler:nil))
+                    //need to present to show it to the user
                     self.present(resetEmalSentAlert, animated: true, completion: nil)
                 }
             })
         }))
+        self.present(forgotPwAlert, animated: true, completion: nil)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
