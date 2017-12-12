@@ -22,7 +22,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         self.passwordField.delegate = self
         self.reenterPasswordField.delegate = self
         self.hidKeyBoardWhenTapped()
-        
         // Do any additional setup after loading the view.
     }
 
@@ -110,13 +109,4 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 }
 
 // extension to get keyboard out of the way
-extension UIViewController{
-    func hidKeyBoardWhenTapped(){
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
-    }
-    @objc func dismissKeyboard(){
-        view.endEditing(true)
-    }
-}
+

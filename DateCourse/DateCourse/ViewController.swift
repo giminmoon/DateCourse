@@ -39,7 +39,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 //if logged in, move on to the next viewcontroller
                 //self.performSegue(withIdentifier: "ToHomeScreen", sender: nil)
                 let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
-                let homeVC:MainViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+                let homeVC:UINavigationController = storyboard.instantiateViewController(withIdentifier: "mainNavigationController") as! UINavigationController
                 self.present(homeVC, animated: true, completion: nil)
             }
             else{

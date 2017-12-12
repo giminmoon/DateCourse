@@ -17,6 +17,7 @@ class DataModel{
     
     //array with all the date courses
     var courses = [CourseData]()
+    
     //store the locations the user chose
     var locations = [GMSPlace]()
     
@@ -43,5 +44,8 @@ class DataModel{
     }
     func numberOfLocations()->Int {
         return locations.count
+    }
+    func random()->Int{
+        return Int(arc4random_uniform(UInt32(courses.count - 1)))
     }
 }

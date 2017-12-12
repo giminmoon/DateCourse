@@ -35,6 +35,12 @@ class test: UIViewController, GMSPlacePickerViewControllerDelegate, CLLocationMa
         manager.requestWhenInUseAuthorization()
         
         if CLLocationManager.locationServicesEnabled() {
+//            switch CLLocationManager.authorizationStatus() {
+//                case .notDetermined, .restricted, .denied:
+//                    print("No access")
+//                case .authorizedAlways, .authorizedWhenInUse:
+//                    print("Access")
+//                }
             manager.startUpdatingLocation()
             setUpMap()
         }
@@ -62,7 +68,6 @@ class test: UIViewController, GMSPlacePickerViewControllerDelegate, CLLocationMa
 //    }
 //    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
 //        let errorType = nil
-//
 //    }
     func setUpMap()
     {
@@ -86,9 +91,7 @@ class test: UIViewController, GMSPlacePickerViewControllerDelegate, CLLocationMa
         line.strokeWidth = 3.0
         line.map = test.mapView
         test.lines.append(line)
-        
         view = test.mapView
-
     }
     
     @IBAction func pickPlace(_ sender: UIBarButtonItem) {
@@ -158,7 +161,6 @@ class test: UIViewController, GMSPlacePickerViewControllerDelegate, CLLocationMa
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {
         // Dismiss the place picker, as it cannot dismiss itself.
         viewController.dismiss(animated: true, completion: nil)
-        
         print("No place selected")
     }
     
