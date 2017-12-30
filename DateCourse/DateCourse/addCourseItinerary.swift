@@ -13,8 +13,12 @@ import GooglePlacePicker
 import CoreLocation
 
 class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    let imagePicker = UIImagePickerController()
     
+    let imagePicker = UIImagePickerController()
+    var completionHandler: (() -> Void)?
+    var mainTable = UITableView!.self
+    var onSave : ((_ course: CourseData)-> ())?
+
     @IBOutlet weak var introTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
@@ -30,9 +34,8 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
         imagePicker.delegate = self
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
-        print("im in apparently itinerary?")
-        // Do any additional setup after loading the view.
     }
+    
     func checkPermission() {
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
@@ -66,13 +69,13 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? ItineraryCell else{
             return UITableViewCell()
         }
-        cell.imageView?.tag = indexPath.row
+        selectedIndexPath = indexPath.row
         cell.titleLabel.text = addCourseMap.locations[indexPath.row].name
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 300
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
@@ -81,53 +84,48 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
 //        self.present(selectedVC, animated: true, completion: nil)
         dismiss(animated: true, completion: nil)
     }
-    
+  
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        //save the path
-        //alert are you sure?
-        
         let okAlert = UIAlertController(title: "Warning!", message: "Do you want to Save?", preferredStyle: .alert)
         okAlert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: {(action) in
             print("cancel saving")
             }))
         okAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action) in
             let course = CourseData.init(title: self.titleTextField.text!, intro: self.introTextField.text!, locations: addCourseMap.locations)
-            DataModel.sharedInstance.addCourse(course: course)
+            self.onSave?(course)
             self.clear()
             self.dismiss(animated: true, completion: nil)
-            //go back to main menu
         }))
         present(okAlert, animated: true, completion: nil)
     }
     
     func clear()
     {
-        //clear all textfields and exit
-        
         addCourseMap().clearAll()
-        print("clear everything")
     }
     @IBAction func addImagePressed(_ sender: Any) {
         let photoAuthorizationStatus = PHPhotoLibrary.authorizationStatus()
         switch photoAuthorizationStatus {
         case .authorized:
             print("Access is granted by user")
-
-            self.selectedIndexPath = (sender as AnyObject).tag
-            self.present(imagePicker, animated: true, completion: nil)
-            
+            print("index path : \(selectedIndexPath)")
+            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) {
+                    self.imagePicker.modalPresentationStyle = .popover
+                    self.imagePicker.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+                    self.imagePicker.popoverPresentationController?.sourceView = view
+                    self.present(imagePicker, animated: true, completion: nil)
+                }
+        
         case .notDetermined:
             PHPhotoLibrary.requestAuthorization({
                 (newStatus) in
                 print("status is \(newStatus)")
                 if newStatus ==  PHAuthorizationStatus.authorized {
                     /* do stuff here */
-                    let imagePicker = UIImagePickerController()
-                    imagePicker.delegate = self
-                    imagePicker.allowsEditing = false
-                    imagePicker.sourceType = .photoLibrary
-                    self.selectedIndexPath = (sender as AnyObject).tag
-                    self.present(imagePicker, animated: true, completion: nil)
+                    self.imagePicker.modalPresentationStyle = .popover
+                    self.imagePicker.popoverPresentationController?.delegate = self as? UIPopoverPresentationControllerDelegate
+                    self.imagePicker.popoverPresentationController?.sourceView = self.view
+                    self.present(self.imagePicker, animated: true, completion: nil)
                     print("success")
                 }
             })
@@ -144,19 +142,18 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
     func imagePickerControllerDidCancel(_ imagePicker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
-    
+  
     @objc func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-            dismiss(animated: true, completion: nil)
-//            if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-//            print("im picking?")
-//            let selectedPath = IndexPath(row: self.selectedIndexPath, section: 0)
-//            let cell = tableView(tableView, cellForRowAt: selectedPath) as! ItineraryCell
-//            cell.placeImageView.contentMode = .scaleAspectFit
-//            cell.placeImageView.image = pickedImage
-//
-//        }
+            if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            print("im picking?")
+            let cell = tableView.cellForRow(at: IndexPath.init(row: 0, section: 0)) as! ItineraryCell
+            cell.placeImageView.contentMode = .scaleAspectFit
+            cell.placeImageView.image = pickedImage
+            imagePicker.dismiss(animated: true, completion: nil)
+        }
     }
 }
+
 
 // extension to get keyboard out of the way
 extension UIViewController{

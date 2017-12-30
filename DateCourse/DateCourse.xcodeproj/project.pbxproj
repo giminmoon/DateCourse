@@ -141,7 +141,6 @@
 		053AE3651FBE1B5100B83B65 /* DateCourse */ = {
 			isa = PBXGroup;
 			children = (
-				05A819CC1FDF3162005CC149 /* New Group */,
 				053AE3661FBE1B5100B83B65 /* AppDelegate.swift */,
 				053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */,
 				053AE3681FBE1B5100B83B65 /* ViewController.swift */,
@@ -180,13 +179,6 @@
 				053AE3881FBE1B5100B83B65 /* Info.plist */,
 			);
 			path = DateCourseUITests;
-			sourceTree = "<group>";
-		};
-		05A819CC1FDF3162005CC149 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		A52361879917D1861963474F /* Pods */ = {

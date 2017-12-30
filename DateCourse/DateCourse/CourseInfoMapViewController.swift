@@ -47,7 +47,7 @@ class CourseInfoMapViewController: UIViewController, CLLocationManagerDelegate {
     let pathway = GMSMutablePath()
     
     //for loop
-        for location in (MainViewController.selectedCourse?.locations)!
+    for location in (MainViewController.selectedCourse?.locations)!
     {
         let marker = GMSMarker()
         marker.position = (location.coordinate)

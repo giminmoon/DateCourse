@@ -72,8 +72,8 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
     //    }
     func setUpMap()
     {
-        let camera = GMSCameraPosition.camera(withLatitude: (manager.location?.coordinate.latitude)!, longitude: (manager.location?.coordinate.longitude)!, zoom: 15.0)
-        
+       let camera = GMSCameraPosition.camera(withLatitude: (manager.location?.coordinate.latitude)!, longitude: (manager.location?.coordinate.longitude)!, zoom: 15.0)
+    
         //initialize googlemap
         addCourseMap.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         //addCourseMap.mapView?.delegate = (self as! GMSMapViewDelegate)
@@ -170,5 +170,6 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
     }
     
 }
+
 
 
