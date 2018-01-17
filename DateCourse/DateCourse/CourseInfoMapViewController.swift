@@ -19,7 +19,7 @@ class CourseInfoMapViewController: UIViewController, CLLocationManagerDelegate {
         print("am i here")
         setManager()
     }
-
+    
     func setManager(){
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest

@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseCore
 import FirebaseAuth
+import FirebaseDatabase
 
 class SignUpViewController: UIViewController, UITextFieldDelegate {
     //note that they're all optionals
@@ -38,12 +40,28 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     @IBAction func createAccountTapped(_ sender: Any) {
         if passwordField.text == reenterPasswordField.text{
             Auth.auth().createUser(withEmail: usernameField.text!, password: passwordField.text!, completion: {(user,error) in
+                
                 if error != nil {
                     let signuperrorAlert = UIAlertController(title: "Sign Up Error", message: "\(String(describing: error?.localizedDescription)) Please try again later", preferredStyle: .alert)
                     signuperrorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                     self.present(signuperrorAlert, animated: true, completion: nil)
                     return
                 }
+                
+                let user = Auth.auth().currentUser
+                guard let uid = user?.uid else{
+                    return
+                }
+                let ref = Database.database(url: "https://datecourse-app.firebaseio.com/").reference()
+                let userReference = ref.child("users").child(uid)
+                let values = ["email": self.usernameField.text]
+                userReference.updateChildValues(values, withCompletionBlock: {(err,ref) in
+                    if err != nil {
+                        print(err)
+                        return
+                    }
+                    print("saved user in firebase")
+                })
                 self.sendEmail()
                 self.dismiss(animated: true, completion: nil)
             })

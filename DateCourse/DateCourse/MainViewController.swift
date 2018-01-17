@@ -20,13 +20,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
-        setCourses()
+        //setCourses()
     }
     
     func setCourses(){
         DataModel.sharedInstance.addCourse(course: CourseData(previewImage: "seattle", title: "Journey to Seattle", intro: "welcome to seattle everyone"))
-//        DataModel.sharedInstance.addCourse(course: CourseData(previewImage: "los angeles", title: "One day trip inside Los Angeles", intro: "welcome to seattle everyone"))
-//        DataModel.sharedInstance.addCourse(course: CourseData(previewImage: "newyork", title: "welcome to newyork", intro: "welcome to seattle everyone"))
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,13 +36,9 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CourseCell else{
             return UITableViewCell()
         }
-        if DataModel.sharedInstance.courses[indexPath.row].previewImage == "" {
-            cell.previewImageView.image = UIImage(named: DataModel.sharedInstance.courses[DataModel.sharedInstance.random()].previewImage)
-        }
-        else{
-            cell.previewImageView.image = UIImage(named: DataModel.sharedInstance.courses[indexPath.row].previewImage)
-        }
         
+        cell.previewImageView.image = DataModel.sharedInstance.courses[indexPath.row].images[0]
+        cell.previewImageView.contentMode = .scaleAspectFit
         cell.courseTitleLabel.text = DataModel.sharedInstance.courses[indexPath.row].title
         return cell
     }
@@ -72,6 +66,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //segue for adding
         let tabBar : UITabBarController = segue.destination as! UITabBarController
         let nav = tabBar.viewControllers![1] as! UINavigationController
         let itinVC = nav.topViewController as! addCourseItinerary
@@ -80,7 +75,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     func onSave(_ course : CourseData) -> () {
         DataModel.sharedInstance.addCourse(course: course)
         let indexPath = IndexPath(row: DataModel.sharedInstance.numberOfCourses() - 1, section: 0)
-        
+        print("how many images? : \(course.images.count)")
         tableView.beginUpdates()
         tableView.insertRows(at: [indexPath], with: .automatic)
         tableView.endUpdates()

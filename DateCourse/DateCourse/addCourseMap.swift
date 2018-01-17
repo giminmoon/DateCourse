@@ -117,16 +117,26 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
         }
        
         //delete last path and marker
-        if (addCourseMap.pathway?.count())! > 1
+        if (addCourseMap.pathway?.count())! > 0
         {
             print("deleting coordinates and markers")
-
             //set last line and marker to nil
             addCourseMap.pathway?.removeLastCoordinate()
             addCourseMap.lines[addCourseMap.lines.count - 1].map = nil
             addCourseMap.lines.remove(at: addCourseMap.lines.count - 1)
             addCourseMap.markers[addCourseMap.markers.count - 1].map = nil
             addCourseMap.markers.remove(at: addCourseMap.markers.count - 1)
+            
+            //delete cell in itinieray
+            let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+            let itinVC = navController.topViewController as! addCourseItinerary
+            
+           // print("\(addCourseMap.locations.count - 1)")
+            
+            let indexPath = IndexPath(row: addCourseMap.locations.count, section: 0)
+            itinVC.tableView.beginUpdates()
+            itinVC.tableView.deleteRows(at: [indexPath], with: .automatic)
+            itinVC.tableView.endUpdates()
         }
     }
     
@@ -138,8 +148,7 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
         viewController.dismiss(animated: true, completion: nil)
         addCourseMap.locations.append(place)
         
-//        let camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
-//        addCourseMap.mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        //To-Do #1: check if this place has been already added
         
         // add a marker for the selected place
         let marker = GMSMarker()
@@ -161,6 +170,14 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
         addCourseMap.mapView?.camera = GMSCameraPosition.camera(withLatitude: place.coordinate.latitude, longitude: place.coordinate.longitude, zoom: 15.0)
     
         //add a cell in itinieray
+        let navController = self.tabBarController?.viewControllers![1] as! UINavigationController
+        let itinVC = navController.topViewController as! addCourseItinerary
+        print("\(addCourseMap.locations.count - 1)")
+        
+        let indexPath = IndexPath(row: addCourseMap.locations.count - 1, section: 0)
+        itinVC.tableView.beginUpdates()
+        itinVC.tableView.insertRows(at: [indexPath], with: .automatic)
+        itinVC.tableView.endUpdates()
     }
     
     func placePickerDidCancel(_ viewController: GMSPlacePickerViewController) {

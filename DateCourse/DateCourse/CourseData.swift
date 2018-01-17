@@ -16,9 +16,10 @@ class CourseData{
     var previewImage : String
     var title : String
     var intro : String
-
+    var images : [UIImage] = []
     //add array of the following
     var locations : [GMSPlace] = []
+    var descriptions : [String] = []
 
     init(previewImage: String, title : String, intro : String) {
         self.title = title
@@ -26,10 +27,12 @@ class CourseData{
         self.previewImage = previewImage
         locations = []
     }
-    init(title : String, intro : String, locations : [GMSPlace]) {
+    init(title : String, intro : String, locations : [GMSPlace], images : [UIImage], descriptions : [String]) {
         self.title = title
         self.intro = intro
         self.locations = locations
         self.previewImage = ""
+        self.images = images
+        self.descriptions = descriptions
     }
 }
