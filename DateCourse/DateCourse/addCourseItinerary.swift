@@ -85,6 +85,7 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        self.clear()
         dismiss(animated: true, completion: nil)
     }
   
@@ -158,7 +159,11 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
     
     func clear()
     {
+        //clear pinpoints in map
         addCourseMap().clearAll()
+        //clear table in addCourseItinerary
+        tableView.reloadData()
+        print("there are \(addCourseMap.locations.count) things in the table")
     }
     
     @IBAction func addImagePressed(_ sender: UIButton) {

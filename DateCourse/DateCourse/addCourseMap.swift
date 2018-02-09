@@ -35,6 +35,7 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
         for view in self.view.subviews{
             view.removeFromSuperview()
         }
+        addCourseMap.locations.removeAll()
     }
     func setManager(){
         manager.delegate = self
