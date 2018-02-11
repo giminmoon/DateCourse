@@ -22,7 +22,6 @@ class DataModel{
     var locations = [GMSPlace]()
     
     init() {
-        print("data model initialized")
     }
     
     func addCourse(course : CourseData){

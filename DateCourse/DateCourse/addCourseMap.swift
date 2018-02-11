@@ -176,6 +176,8 @@ class addCourseMap: UIViewController, GMSPlacePickerViewControllerDelegate, CLLo
         print("\(addCourseMap.locations.count - 1)")
         
         let indexPath = IndexPath(row: addCourseMap.locations.count - 1, section: 0)
+        //crashes when I directly go to Create ->  + -> pick place
+        //doenst crash when I go Create -> tap itinerary fisrt -> go back to map -> + -> pick place
         itinVC.tableView.beginUpdates()
         itinVC.tableView.insertRows(at: [indexPath], with: .automatic)
         itinVC.tableView.endUpdates()

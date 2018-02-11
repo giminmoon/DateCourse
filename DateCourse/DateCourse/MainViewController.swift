@@ -9,27 +9,42 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
-
+import Firebase
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    var courses = [CourseData]()
     
     static var selectedCourse : CourseData? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        //setCourses()
+//        tableView.delegate = self
+//        tableView.dataSource = self
+        fetchCourses()
     }
     
-    func setCourses(){
-        DataModel.sharedInstance.addCourse(course: CourseData(previewImage: "seattle", title: "Journey to Seattle", intro: "welcome to seattle everyone"))
-    }
+    func fetchCourses(){
+        Database.database().reference().child("courses").observe(.childAdded, with: { (snapshot) in
+            if let dictionary = snapshot.value as? [String: AnyObject] {
+                let course = CourseData()
+                course.descriptions = dictionary["descriptions"] as! [String]
+                //course.urls = dictionary["images"] as! [String]
+                course.intro = dictionary["intro"] as! String
+                course.title = dictionary["title"] as! String
+                course.user = dictionary["user"] as! String
+                self.courses.append(course)
 
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+        }, withCancel: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("helloooo \(DataModel.sharedInstance.numberOfCourses())")
-        return DataModel.sharedInstance.numberOfCourses()
+        //return DataModel.sharedInstance.numberOfCourses()
+        return courses.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -37,14 +52,30 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             return UITableViewCell()
         }
         
-        cell.previewImageView.image = DataModel.sharedInstance.courses[indexPath.row].images[0]
-        cell.previewImageView.contentMode = .scaleAspectFit
-        cell.courseTitleLabel.text = DataModel.sharedInstance.courses[indexPath.row].title
+        let course = courses[indexPath.row]
+//        let previewImageURL = course.urls[0]
+//        let url = URL.init(string: previewImageURL)
+//        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+//            if error != nil{
+//                print(error as Any)
+//                return
+//            }
+//            DispatchQueue.main.async {
+//                cell.previewImageView.image = UIImage.init(data: data!)
+//            }
+//        }.resume()
+    
+        //cell.backgroundView = UIImageView.init(image: course.images[0])
+        //cell.backgroundView = UIImageView.init(image: DataModel.sharedInstance.courses[indexPath.row].images[0])
+        //
+        //cell.previewImageView.contentMode = .scaleAspectFit
+        //cell.courseTitleLabel.text = DataModel.sharedInstance.courses[indexPath.row].title
+        cell.courseTitleLabel.text = course.title
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 150
+        return 200
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,6 +84,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         MainViewController.selectedCourse = DataModel.sharedInstance.courses[indexPath.row]
         //self.present(selectedVC, animated: true, completion: nil)
         self.show(selectedVC, sender: MainViewController())
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 
     @IBAction func SignOutButtonPressed(_ sender: Any) {
@@ -72,22 +104,17 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let itinVC = nav.topViewController as! addCourseItinerary
         itinVC.onSave = onSave
     }
+    
+    //example of completion block for data transfer !!
+    //no longer in use after implementation of firebase for data persistence
     func onSave(_ course : CourseData) -> () {
-        DataModel.sharedInstance.addCourse(course: course)
-        let indexPath = IndexPath(row: DataModel.sharedInstance.numberOfCourses() - 1, section: 0)
-        print("how many images? : \(course.images.count)")
-        tableView.beginUpdates()
-        tableView.insertRows(at: [indexPath], with: .automatic)
-        tableView.endUpdates()
+//        DataModel.sharedInstance.addCourse(course: course)
+//        let indexPath = IndexPath(row: DataModel.sharedInstance.numberOfCourses() - 1, section: 0)
+//        print("how many images? : \(course.images.count)")
+//        tableView.beginUpdates()
+//        tableView.insertRows(at: [indexPath], with: .automatic)
+//        tableView.endUpdates()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
+
+

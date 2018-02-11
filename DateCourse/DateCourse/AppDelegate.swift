@@ -16,10 +16,11 @@ import GooglePlacePicker
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var FireBaseReference : DatabaseReference!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+        FireBaseReference = Database.database().reference()
         GMSPlacesClient.provideAPIKey("AIzaSyB_ExBsK6zjHw6ot7QT6SPKPg2l3sb-0iM")
         GMSServices.provideAPIKey("AIzaSyB_ExBsK6zjHw6ot7QT6SPKPg2l3sb-0iM")
         

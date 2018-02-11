@@ -97,11 +97,6 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
             }))
         okAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action) in
             
-        //save each cell's textfield and photo data into arrays
-        //for index in 0..<(self.tableView.visibleCells.count - 1) {
-          
-            //let cell = self.tableView.visibleCells[index] as? ItineraryCell
-            
             let cells = self.tableView.visibleCells as! Array<ItineraryCell>
             for cell in cells {
                 self.descriptions.append((cell.descriptionTextField.text)!)
@@ -112,6 +107,7 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
                 let storageImage = currentImage?.resizedTo1MB()!
                 let imageName = NSUUID().uuidString
                 self.photoIDs.append(imageName)
+                
                 let storageRef = Storage.storage().reference().child("\(imageName).png")
                 if let uploadData = UIImagePNGRepresentation(storageImage!){
                     storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
@@ -119,7 +115,21 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
                             print(error!)
                             return
                         }
-                        print(metadata!)
+                        guard let metadata = metadata else {
+                            print("error")
+                            return
+                        }
+                        print("hu...")
+                        // Metadata contains file metadata such as size, content-type, and download URL.
+                        let downloadURL = metadata.downloadURL()?.absoluteString
+                        //self.photoIDs.append(downloadURL!)
+                        print("adding..")
+                        //get each photos downloadable image URL
+//                        if let imageURL = downloadURL?.absoluteString{
+//                            self.photoIDs.append(imageURL)
+//                            print(imageURL)
+//                        }
+                        print(metadata)
                         })
                     }
             }
@@ -128,19 +138,19 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
             print("not valid form")
             return
         }
-            
         //save each "course" to firebase under the current user.
-        let course = CourseData.init(title: title, intro: intro, locations: addCourseMap.locations, images: self.photos, descriptions : self.descriptions)
-        
+//        let course = CourseData.init(title: title, intro: intro, locations: addCourseMap.locations, images: self.photos, descriptions : self.descriptions)
+        let course = CourseData()
         let user = Auth.auth().currentUser
         guard let uid = user?.uid else{
             return
         }
         let ref = Database.database(url: "https://datecourse-app.firebaseio.com/").reference()
-            let userReference = ref.child("courses").child("\(uid)").childByAutoId()
+            let userReference = ref.child("courses").childByAutoId()
             // need to fix saving locations
-        let addingCourse = ["title": title, "intro": intro, "locations": title, "images": self.photoIDs, "descriptions" : self.descriptions] as [String : Any]
-        userReference.updateChildValues(addingCourse, withCompletionBlock: {(err,ref) in
+            print("photoID has : \(self.photoIDs.count) items ")
+            let addingCourse = ["user": uid, "title": title, "intro": intro, "locations": title, "images": self.photoIDs, "descriptions" : self.descriptions] as [String : Any]
+            userReference.updateChildValues(addingCourse, withCompletionBlock: {(err,ref) in
             if err != nil {
                 print(err as Any)
                 return
