@@ -97,6 +97,7 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
             }))
         okAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: {(action) in
             
+            // loop through all the cells and store the photos in each cell to firebase storage
             let cells = self.tableView.visibleCells as! Array<ItineraryCell>
             for cell in cells {
                 self.descriptions.append((cell.descriptionTextField.text)!)
@@ -106,15 +107,19 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
                 let currentImage = cell.placeImageView.image
                 let storageImage = currentImage?.resizedTo1MB()!
                 let imageName = NSUUID().uuidString
-                //self.photoIDs.append(imageName)
-    
+            
+                //reference to currentUser
+                let user = Auth.auth().currentUser
+                guard let uid = user?.uid else{
+                    return
+                }
+                
                 let storageRef = Storage.storage().reference().child("\(imageName).png")
                 if let uploadData = UIImagePNGRepresentation(storageImage!){
                     storageRef.putData(uploadData, metadata: nil, completion: { (metadata, error) in
                         
                         if let error = error{
                             print(error)
-                            print("printed eror")
                             return
                         }
                         
@@ -122,50 +127,48 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
                             print("error")
                             return
                         }
+                        
                         // Metadata contains file metadata such as size, content-type, and download URL.
                         if let downloadURL = metadata.downloadURL()?.absoluteString{
                             //store the downloadable url's from each saved photo
                             self.photoIDs.append(downloadURL)
+                            print(downloadURL)
                         }
-                        else
-                        {
-                            print("it is nillll")
+                    
+                        //get title and intro textfields
+                        guard let title = self.titleTextField.text, let intro = self.introTextField.text else {
+                            print("not valid form")
+                            return
                         }
+                        
+                        //create an array of information to store under "course"
+                        let course = ["user": uid, "title": title, "intro": intro, "locations": title, "images": self.photoIDs, "descriptions" : self.descriptions] as [String : AnyObject]
+                        //registeres course to database
+                        self.registerCourseIntoDatabase(course: course)
+                        
                         print(metadata)
                         })
                     }
             }
-            
-        guard let title = self.titleTextField.text, let intro = self.introTextField.text else{
-            print("not valid form")
-            return
-        }
-            
-        //upload course to FireBase under "courses"
-        let user = Auth.auth().currentUser
-        guard let uid = user?.uid else{
-            return
-        }
         
-        let ref = Database.database(url: "https://datecourse-app.firebaseio.com/").reference()
-        let userReference = ref.child("courses").childByAutoId()
-        // need to fix saving locations
-        print("photoID has : \(self.photoIDs.count) items ")
-        let addingCourse = ["user": uid, "title": title, "intro": intro, "locations": title, "images": self.photoIDs, "descriptions" : self.descriptions] as [String : Any]
-        userReference.updateChildValues(addingCourse, withCompletionBlock: {(err,ref) in
-            if err != nil {
-                print(err as Any)
-                return
-            }
-            print("saved user in firebase")
-        })
-    
-        //invoke save functionality to clear fields
+        //Reset all fields
         self.clear()
         self.dismiss(animated: true, completion: nil)
         
         }))
         present(okAlert, animated: true, completion: nil)
+    }
+    
+    private func registerCourseIntoDatabase(course : [String : AnyObject]) {
+        let ref = Database.database(url: "https://datecourse-app.firebaseio.com/").reference()
+        let userReference = ref.child("courses").childByAutoId()
+        userReference.updateChildValues(course, withCompletionBlock: {(err,ref) in
+            if err != nil {
+                print(err as Any)
+                return
+            }
+            print("saved course in firebase")
+        })
     }
     
     func clear()
@@ -174,7 +177,6 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
         addCourseMap().clearAll()
         //clear table in addCourseItinerary
         tableView.reloadData()
-        print("there are \(addCourseMap.locations.count) things in the table")
     }
     
     @IBAction func addImagePressed(_ sender: UIButton) {
@@ -221,10 +223,6 @@ class addCourseItinerary: UIViewController, UITableViewDelegate, UITableViewData
         dismiss(animated: true, completion: nil)
     }
     
-    func handleSelectImage(){
-        
-    }
-  
     func imagePickerController(_ imagePicker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
             if let tempImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             print("im picking? \(selectedIndexPath)")

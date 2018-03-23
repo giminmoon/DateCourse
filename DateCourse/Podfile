@@ -9,13 +9,11 @@ target 'DateCourse' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'Firebase/Storage'
-  pod 'FacebookCore'
-  pod 'FacebookLogin'
-  pod 'TwitterKit'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'GooglePlacePicker'
-
+  pod 'Alamofire'
+  pod 'AlamofireImage'
 
   # Pods for DateCourse
 

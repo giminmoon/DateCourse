@@ -10,6 +10,8 @@ import UIKit
 import FirebaseCore
 import FirebaseAuth
 import Firebase
+import Alamofire
+import AlamofireImage
 
 class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
@@ -19,8 +21,6 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     static var selectedCourse : CourseData? = nil
     override func viewDidLoad() {
         super.viewDidLoad()
-//        tableView.delegate = self
-//        tableView.dataSource = self
         fetchCourses()
     }
     
@@ -29,7 +29,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if let dictionary = snapshot.value as? [String: AnyObject] {
                 let course = CourseData()
                 course.descriptions = dictionary["descriptions"] as! [String]
-                //course.urls = dictionary["images"] as! [String]
+                course.urls = dictionary["images"] as! [String]
                 course.intro = dictionary["intro"] as! String
                 course.title = dictionary["title"] as! String
                 course.user = dictionary["user"] as! String
@@ -53,29 +53,24 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
         let course = courses[indexPath.row]
-//        let previewImageURL = course.urls[0]
-//        let url = URL.init(string: previewImageURL)
-//        URLSession.shared.dataTask(with: url!) { (data, response, error) in
-//            if error != nil{
-//                print(error as Any)
-//                return
-//            }
-//            DispatchQueue.main.async {
-//                cell.previewImageView.image = UIImage.init(data: data!)
-//            }
-//        }.resume()
-    
-        //cell.backgroundView = UIImageView.init(image: course.images[0])
-        //cell.backgroundView = UIImageView.init(image: DataModel.sharedInstance.courses[indexPath.row].images[0])
-        //
-        //cell.previewImageView.contentMode = .scaleAspectFit
-        //cell.courseTitleLabel.text = DataModel.sharedInstance.courses[indexPath.row].title
-        cell.courseTitleLabel.text = course.title
+        let previewImageURL = course.urls[0]
+        print(previewImageURL)
+        
+
+        let url = URL.init(string: previewImageURL)
+//        async call to set image using Alamofire
+        Alamofire.request(url!).responseImage { (response) in
+            if let responseImage = response.result.value {
+                cell.previewImageView.contentMode = .scaleAspectFit
+                cell.previewImageView.image = responseImage
+                cell.courseTitleLabel.text = course.title
+            }
+        }
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 250
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

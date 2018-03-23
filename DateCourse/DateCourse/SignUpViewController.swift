@@ -60,7 +60,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
                         print(err)
                         return
                     }
+                    
                     print("saved user in firebase")
+                    
                 })
                 self.sendEmail()
                 self.dismiss(animated: true, completion: nil)

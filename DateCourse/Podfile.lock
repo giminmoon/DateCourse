@@ -1,64 +1,50 @@
 PODS:
-  - Bolts (1.8.4):
-    - Bolts/AppLinks (= 1.8.4)
-    - Bolts/Tasks (= 1.8.4)
-  - Bolts/AppLinks (1.8.4):
-    - Bolts/Tasks
-  - Bolts/Tasks (1.8.4)
-  - FacebookCore (0.3.0):
-    - Bolts (~> 1.8)
-    - FBSDKCoreKit (~> 4.27)
-  - FacebookLogin (0.3.0):
-    - Bolts (~> 1.8)
-    - FacebookCore (~> 0.3)
-    - FBSDKCoreKit (~> 4.27)
-    - FBSDKLoginKit (~> 4.27)
-  - FBSDKCoreKit (4.28.0):
-    - Bolts (~> 1.7)
-  - FBSDKLoginKit (4.28.0):
-    - FBSDKCoreKit
-  - Firebase/Auth (4.6.0):
+  - Alamofire (4.7.0)
+  - AlamofireImage (3.3.0):
+    - Alamofire (~> 4.5)
+  - Firebase/Auth (4.11.0):
     - Firebase/Core
-    - FirebaseAuth (= 4.3.2)
-  - Firebase/Core (4.6.0):
-    - FirebaseAnalytics (= 4.0.5)
-    - FirebaseCore (= 4.0.11)
-  - Firebase/Database (4.6.0):
+    - FirebaseAuth (= 4.5.0)
+  - Firebase/Core (4.11.0):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.18)
+  - Firebase/Database (4.11.0):
     - Firebase/Core
-    - FirebaseDatabase (= 4.1.1)
-  - Firebase/Storage (4.6.0):
+    - FirebaseDatabase (= 4.1.5)
+  - Firebase/Storage (4.11.0):
     - Firebase/Core
-    - FirebaseStorage (= 2.0.2)
-  - FirebaseAnalytics (4.0.5):
+    - FirebaseStorage (= 2.1.3)
+  - FirebaseAnalytics (4.1.0):
     - FirebaseCore (~> 4.0)
     - FirebaseInstanceID (~> 2.0)
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
     - nanopb (~> 0.3)
-  - FirebaseAuth (4.3.2):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseAuth (4.5.0):
+    - FirebaseAnalytics (~> 4.1)
     - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
     - GTMSessionFetcher/Core (~> 1.1)
-  - FirebaseCore (4.0.11):
+  - FirebaseCore (4.0.18):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (4.1.1):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseDatabase (4.1.5):
+    - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.6)
-  - FirebaseStorage (2.0.2):
-    - FirebaseAnalytics (~> 4.0)
+  - FirebaseInstanceID (2.0.10):
+    - FirebaseCore (~> 4.0)
+  - FirebaseStorage (2.1.3):
+    - FirebaseAnalytics (~> 4.1)
     - FirebaseCore (~> 4.0)
     - GTMSessionFetcher/Core (~> 1.1)
-  - GoogleMaps (2.5.0):
-    - GoogleMaps/Maps (= 2.5.0)
-  - GoogleMaps/Base (2.5.0)
-  - GoogleMaps/Maps (2.5.0):
+  - GoogleMaps (2.6.0):
+    - GoogleMaps/Maps (= 2.6.0)
+  - GoogleMaps/Base (2.6.0)
+  - GoogleMaps/Maps (2.6.0):
     - GoogleMaps/Base
-  - GooglePlacePicker (2.5.0):
-    - GoogleMaps (= 2.5.0)
-    - GooglePlaces (= 2.5.0)
-  - GooglePlaces (2.5.0):
-    - GoogleMaps/Base (= 2.5.0)
+  - GooglePlacePicker (2.6.0):
+    - GoogleMaps (= 2.6.0)
+    - GooglePlaces (= 2.6.0)
+  - GooglePlaces (2.6.0):
+    - GoogleMaps/Base (= 2.6.0)
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
@@ -69,51 +55,42 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.3)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
-  - GTMSessionFetcher/Core (1.1.12)
+  - GTMSessionFetcher/Core (1.1.14)
   - leveldb-library (1.20)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - TwitterCore (3.0.2)
-  - TwitterKit (3.2.1):
-    - TwitterCore (>= 3.0.2)
 
 DEPENDENCIES:
-  - FacebookCore
-  - FacebookLogin
+  - Alamofire
+  - AlamofireImage
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
-  - TwitterKit
 
 SPEC CHECKSUMS:
-  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  FacebookCore: 3ffa190a3f1f96cec0e44d3fc221bc322c595ffa
-  FacebookLogin: 0af839ea858faef99550d16596b87b4a8e8906e6
-  FBSDKCoreKit: ca961e279113f691fd83dc634c0bbad9d4e3f370
-  FBSDKLoginKit: b077381c27d800f21661757e8140cf2c80a91e4a
-  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
-  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
-  FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
-  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
-  FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
-  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
-  FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
-  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
-  GooglePlacePicker: 1573e644ab54564d95c2643edc0f29091609e966
-  GooglePlaces: dd70d9d71ea1c7944846afe67de3712c99b30a77
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
+  Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseAuth: 147bf340a0706b44ca1753d6b41ebafd9687cfe6
+  FirebaseCore: b981f47e5254cbcfdeb483355300d743f6fcab2c
+  FirebaseDatabase: 5f0bc6134c5c237cf55f9e1249d406770a75eafd
+  FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
+  FirebaseStorage: 9a863a2bb96c406958eeff7c2f1dfa9f44c44a13
+  GoogleMaps: 42f91c68b7fa2f84d5c86597b18ceb99f5414c7f
+  GooglePlacePicker: e4488625effb006f59de49e14b7a603e463e4261
+  GooglePlaces: f6ddf33b75cef69e888907d9947c57198ed845f3
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
-  leveldb-library: 4f9eedf84ab46b4fa3b7893bf30714b2a1a74022
+  GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
+  leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  TwitterCore: e0420b01e02e7d20e94690e37f43e75de219ab8d
-  TwitterKit: 205ac89824bbfe9e85a16c420d30bb7bcbedac45
 
-PODFILE CHECKSUM: 36cc38523fb8b7b4190ddcc2da0d6012d78dca4b
+PODFILE CHECKSUM: d1bf4d015b50e883b317985f4f584e10cfda26a9
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0
