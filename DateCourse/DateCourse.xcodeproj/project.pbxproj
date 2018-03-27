@@ -17,11 +17,14 @@
 		053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */; };
 		053AE3AB1FBEDF7600B83B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */; };
 		053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9F151FD1F501007A883F /* ItineraryCell.swift */; };
+		0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7C2068B338006581E3 /* FirebaseClient.swift */; };
+		0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */; };
 		0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */; };
 		0574635E1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635D1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift */; };
 		057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */; };
 		057463621FCB683C00ACCF7A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057463611FCB683C00ACCF7A /* test.swift */; };
 		057463641FCB87F300ACCF7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057463631FCB87F300ACCF7A /* CoreLocation.framework */; };
+		05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */; };
 		05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */; };
 		05BFC1F41FC80BE90029BC2C /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F31FC80BE90029BC2C /* CourseData.swift */; };
 		05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F71FC810720029BC2C /* CourseCell.swift */; };
@@ -67,11 +70,14 @@
 		053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		053D9F151FD1F501007A883F /* ItineraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCell.swift; sourceTree = "<group>"; };
+		0564AF7C2068B338006581E3 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
+		0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCourseItinerary.swift; sourceTree = "<group>"; };
 		0574635D1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoMapViewController.swift; sourceTree = "<group>"; };
 		0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoItineraryViewController.swift; sourceTree = "<group>"; };
 		057463611FCB683C00ACCF7A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		057463631FCB87F300ACCF7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		05BFC1F31FC80BE90029BC2C /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		05BFC1F71FC810720029BC2C /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
@@ -159,6 +165,9 @@
 				0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */,
 				057463611FCB683C00ACCF7A /* test.swift */,
 				053D9F151FD1F501007A883F /* ItineraryCell.swift */,
+				05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */,
+				0564AF7C2068B338006581E3 /* FirebaseClient.swift */,
+				0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */,
 			);
 			path = DateCourse;
 			sourceTree = "<group>";
@@ -518,13 +527,16 @@
 			files = (
 				05BFC1FA1FC898F80029BC2C /* DataModel.swift in Sources */,
 				057463621FCB683C00ACCF7A /* test.swift in Sources */,
+				0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */,
 				057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */,
+				05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */,
 				0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */,
 				05BFC1FC1FC909560029BC2C /* addCourseMap.swift in Sources */,
 				053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */,
 				0574635E1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift in Sources */,
 				053AE3691FBE1B5100B83B65 /* ViewController.swift in Sources */,
 				053AE3671FBE1B5100B83B65 /* AppDelegate.swift in Sources */,
+				0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */,
 				05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */,
 				053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */,
 				05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */,

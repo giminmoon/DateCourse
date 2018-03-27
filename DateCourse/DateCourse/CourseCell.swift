@@ -10,9 +10,5 @@ import UIKit
 
 class CourseCell: UITableViewCell {
 
-    @IBOutlet weak var previewImageView: UIImageView!
-    @IBOutlet weak var courseTitleLabel: UILabel!
     
-   
-
 }

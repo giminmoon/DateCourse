@@ -7,80 +7,86 @@
 //
 
 import UIKit
-import FirebaseCore
 import FirebaseAuth
-import Firebase
-import Alamofire
-import AlamofireImage
 
-class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+
+class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    @IBOutlet weak var tableView: UITableView!
-    var courses = [CourseData]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    var refresher : UIRefreshControl!
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    let model = DataModel.sharedInstance
     static var selectedCourse : CourseData? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchCourses()
-    }
-    
-    func fetchCourses(){
-        Database.database().reference().child("courses").observe(.childAdded, with: { (snapshot) in
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                let course = CourseData()
-                course.descriptions = dictionary["descriptions"] as! [String]
-                course.urls = dictionary["images"] as! [String]
-                course.intro = dictionary["intro"] as! String
-                course.title = dictionary["title"] as! String
-                course.user = dictionary["user"] as! String
-                self.courses.append(course)
-
-                DispatchQueue.main.async(execute: {
-                    self.tableView.reloadData()
-                })
-            }
-        }, withCancel: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return DataModel.sharedInstance.numberOfCourses()
-        return courses.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CourseCell else{
-            return UITableViewCell()
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.refresher = UIRefreshControl()
+        self.collectionView!.alwaysBounceVertical = true
+        self.refresher.tintColor = UIColor.red
+        self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
+        self.collectionView!.addSubview(refresher)
+        self.activityIndicator.startAnimating()
+        model.getPreviewImages {
+            self.collectionView.reloadSections(IndexSet(integer : 0))
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.hidesWhenStopped = true
         }
-        
-        let course = courses[indexPath.row]
-        let previewImageURL = course.urls[0]
-        print(previewImageURL)
-        
+    }
+    @objc func loadData(){
+        stopRefresher()
+    }
 
-        let url = URL.init(string: previewImageURL)
-//        async call to set image using Alamofire
-        Alamofire.request(url!).responseImage { (response) in
-            if let responseImage = response.result.value {
-                cell.previewImageView.contentMode = .scaleAspectFit
-                cell.previewImageView.image = responseImage
-                cell.courseTitleLabel.text = course.title
-            }
+    func stopRefresher() {
+        self.refresher.endRefreshing()
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    
+        return model.courses.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "collectionViewCell", for: indexPath) as? CourseCollectionViewCell
+            else{
+                return UICollectionViewCell()
         }
+        cell.courseTitle.text = model.courses[indexPath.row].title
+        cell.imageView.image = model.previewImages[indexPath.row]
+        cell.imageView.clipsToBounds = true
+        cell.imageView.layer.cornerRadius = 7
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+    //section header view
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "SectionHeaderView", for: indexPath) as! SectionHeaderView
+        return headerView
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
-        let selectedVC:UITabBarController = storyboard.instantiateViewController(withIdentifier: "courseInfo") as! UITabBarController
-        MainViewController.selectedCourse = DataModel.sharedInstance.courses[indexPath.row]
-        //self.present(selectedVC, animated: true, completion: nil)
-        self.show(selectedVC, sender: MainViewController())
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? CourseCell else{
+//            return UITableViewCell()
+//        }
+//
+//        return cell
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return 250
+//    }
+//
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
+//        let selectedVC:UITabBarController = storyboard.instantiateViewController(withIdentifier: "courseInfo") as! UITabBarController
+//        MainViewController.selectedCourse = DataModel.sharedInstance.courses[indexPath.row]
+//        //self.present(selectedVC, animated: true, completion: nil)
+//        self.show(selectedVC, sender: MainViewController())
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
 
     @IBAction func SignOutButtonPressed(_ sender: Any) {
         do{
