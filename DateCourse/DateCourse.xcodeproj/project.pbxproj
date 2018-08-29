@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		053AE3671FBE1B5100B83B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3661FBE1B5100B83B65 /* AppDelegate.swift */; };
-		053AE3691FBE1B5100B83B65 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3681FBE1B5100B83B65 /* ViewController.swift */; };
+		053AE3691FBE1B5100B83B65 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3681FBE1B5100B83B65 /* LogInViewController.swift */; };
 		053AE36C1FBE1B5100B83B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053AE36A1FBE1B5100B83B65 /* Main.storyboard */; };
 		053AE36E1FBE1B5100B83B65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 053AE36D1FBE1B5100B83B65 /* Assets.xcassets */; };
 		053AE3711FBE1B5100B83B65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053AE36F1FBE1B5100B83B65 /* LaunchScreen.storyboard */; };
@@ -17,6 +17,8 @@
 		053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */; };
 		053AE3AB1FBEDF7600B83B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */; };
 		053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9F151FD1F501007A883F /* ItineraryCell.swift */; };
+		053E4A1D20B784650005E0E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053E4A1C20B784650005E0E4 /* User.swift */; };
+		053E4A1F20B78AB30005E0E4 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053E4A1E20B78AB30005E0E4 /* TempViewController.swift */; };
 		0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7C2068B338006581E3 /* FirebaseClient.swift */; };
 		0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */; };
 		0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */; };
@@ -24,12 +26,16 @@
 		057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */; };
 		057463621FCB683C00ACCF7A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057463611FCB683C00ACCF7A /* test.swift */; };
 		057463641FCB87F300ACCF7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057463631FCB87F300ACCF7A /* CoreLocation.framework */; };
+		057FC1A62135278600D528EE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FC1A52135278600D528EE /* CustomImageView.swift */; };
+		0586B4B820B50DC700C8C634 /* EmptyVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */; };
+		0586B4BA20B5141C00C8C634 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586B4B920B5141C00C8C634 /* MainTabBarController.swift */; };
 		05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */; };
 		05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */; };
 		05BFC1F41FC80BE90029BC2C /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F31FC80BE90029BC2C /* CourseData.swift */; };
 		05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F71FC810720029BC2C /* CourseCell.swift */; };
 		05BFC1FA1FC898F80029BC2C /* DataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F91FC898F80029BC2C /* DataModel.swift */; };
 		05BFC1FC1FC909560029BC2C /* addCourseMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1FB1FC909560029BC2C /* addCourseMap.swift */; };
+		05F0D62C21371F0F004D8339 /* CurrentItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05F0D62B21371F0F004D8339 /* CurrentItinerary.swift */; };
 		0A6D09C99FFF7E45B356C2F6 /* Pods_DateCourse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5751955E2A2EF6F05457ED41 /* Pods_DateCourse.framework */; };
 		9BA8082A9D5D8E6580A5B8C8 /* Pods_DateCourseUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 009545DCF95E7CE6F7983C4F /* Pods_DateCourseUITests.framework */; };
 		C27A7A8B392009E70E9F490F /* Pods_DateCourseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2973323F0242A3139582E962 /* Pods_DateCourseTests.framework */; };
@@ -56,7 +62,7 @@
 		009545DCF95E7CE6F7983C4F /* Pods_DateCourseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DateCourseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		053AE3631FBE1B5100B83B65 /* DateCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053AE3661FBE1B5100B83B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		053AE3681FBE1B5100B83B65 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		053AE3681FBE1B5100B83B65 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		053AE36B1FBE1B5100B83B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		053AE36D1FBE1B5100B83B65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		053AE3701FBE1B5100B83B65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -70,6 +76,8 @@
 		053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		053D9F151FD1F501007A883F /* ItineraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCell.swift; sourceTree = "<group>"; };
+		053E4A1C20B784650005E0E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		053E4A1E20B78AB30005E0E4 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
 		0564AF7C2068B338006581E3 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCourseItinerary.swift; sourceTree = "<group>"; };
@@ -77,12 +85,16 @@
 		0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoItineraryViewController.swift; sourceTree = "<group>"; };
 		057463611FCB683C00ACCF7A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		057463631FCB87F300ACCF7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		057FC1A52135278600D528EE /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
+		0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVCViewController.swift; sourceTree = "<group>"; };
+		0586B4B920B5141C00C8C634 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = DateCourse/View/ViewController/MainTabBarController.swift; sourceTree = SOURCE_ROOT; };
 		05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
 		05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		05BFC1F31FC80BE90029BC2C /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		05BFC1F71FC810720029BC2C /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		05BFC1F91FC898F80029BC2C /* DataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataModel.swift; sourceTree = "<group>"; };
 		05BFC1FB1FC909560029BC2C /* addCourseMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCourseMap.swift; sourceTree = "<group>"; };
+		05F0D62B21371F0F004D8339 /* CurrentItinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentItinerary.swift; sourceTree = "<group>"; };
 		0656A0882E06480735CD7E7E /* Pods-DateCourse.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DateCourse.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DateCourse/Pods-DateCourse.debug.xcconfig"; sourceTree = "<group>"; };
 		099F0EB2152B2C590C9E3FFF /* Pods-DateCourseUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DateCourseUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DateCourseUITests/Pods-DateCourseUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		2973323F0242A3139582E962 /* Pods_DateCourseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DateCourseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,27 +159,13 @@
 		053AE3651FBE1B5100B83B65 /* DateCourse */ = {
 			isa = PBXGroup;
 			children = (
-				053AE3661FBE1B5100B83B65 /* AppDelegate.swift */,
-				053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */,
-				053AE3681FBE1B5100B83B65 /* ViewController.swift */,
-				053AE36A1FBE1B5100B83B65 /* Main.storyboard */,
-				053AE36D1FBE1B5100B83B65 /* Assets.xcassets */,
-				053AE36F1FBE1B5100B83B65 /* LaunchScreen.storyboard */,
 				053AE3721FBE1B5100B83B65 /* Info.plist */,
-				053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */,
-				05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */,
-				05BFC1F31FC80BE90029BC2C /* CourseData.swift */,
-				05BFC1F71FC810720029BC2C /* CourseCell.swift */,
-				05BFC1F91FC898F80029BC2C /* DataModel.swift */,
-				05BFC1FB1FC909560029BC2C /* addCourseMap.swift */,
-				0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */,
-				0574635D1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift */,
-				0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */,
+				0586B4B620B4D27200C8C634 /* Model */,
+				0586B4B520B4D26D00C8C634 /* View */,
+				053AE36A1FBE1B5100B83B65 /* Main.storyboard */,
+				053AE36F1FBE1B5100B83B65 /* LaunchScreen.storyboard */,
 				057463611FCB683C00ACCF7A /* test.swift */,
-				053D9F151FD1F501007A883F /* ItineraryCell.swift */,
-				05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */,
-				0564AF7C2068B338006581E3 /* FirebaseClient.swift */,
-				0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */,
+				053E4A1920B7837B0005E0E4 /* Controller */,
 			);
 			path = DateCourse;
 			sourceTree = "<group>";
@@ -188,6 +186,82 @@
 				053AE3881FBE1B5100B83B65 /* Info.plist */,
 			);
 			path = DateCourseUITests;
+			sourceTree = "<group>";
+		};
+		053E4A1920B7837B0005E0E4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				057FC1A32135275A00D528EE /* Extensions */,
+				053AE3661FBE1B5100B83B65 /* AppDelegate.swift */,
+				053AE36D1FBE1B5100B83B65 /* Assets.xcassets */,
+				053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		053E4A1A20B783C30005E0E4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				05BFC1F71FC810720029BC2C /* CourseCell.swift */,
+				053D9F151FD1F501007A883F /* ItineraryCell.swift */,
+				05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */,
+				0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		053E4A1B20B783DF0005E0E4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				0586B4B920B5141C00C8C634 /* MainTabBarController.swift */,
+				053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */,
+				053AE3681FBE1B5100B83B65 /* LogInViewController.swift */,
+				05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */,
+				05BFC1FB1FC909560029BC2C /* addCourseMap.swift */,
+				0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */,
+				0574635D1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift */,
+				0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */,
+				0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */,
+				053E4A1E20B78AB30005E0E4 /* TempViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		057FC1A32135275A00D528EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				057FC1A52135278600D528EE /* CustomImageView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		057FC1A42135276600D528EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0586B4B520B4D26D00C8C634 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				057FC1A42135276600D528EE /* Views */,
+				053E4A1B20B783DF0005E0E4 /* ViewController */,
+				053E4A1A20B783C30005E0E4 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0586B4B620B4D27200C8C634 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05BFC1F91FC898F80029BC2C /* DataModel.swift */,
+				0564AF7C2068B338006581E3 /* FirebaseClient.swift */,
+				05BFC1F31FC80BE90029BC2C /* CourseData.swift */,
+				053E4A1C20B784650005E0E4 /* User.swift */,
+				05F0D62B21371F0F004D8339 /* CurrentItinerary.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		A52361879917D1861963474F /* Pods */ = {
@@ -422,18 +496,16 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -527,20 +599,26 @@
 			files = (
 				05BFC1FA1FC898F80029BC2C /* DataModel.swift in Sources */,
 				057463621FCB683C00ACCF7A /* test.swift in Sources */,
+				0586B4BA20B5141C00C8C634 /* MainTabBarController.swift in Sources */,
 				0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */,
 				057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */,
+				05F0D62C21371F0F004D8339 /* CurrentItinerary.swift in Sources */,
 				05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */,
 				0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */,
 				05BFC1FC1FC909560029BC2C /* addCourseMap.swift in Sources */,
 				053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */,
 				0574635E1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift in Sources */,
-				053AE3691FBE1B5100B83B65 /* ViewController.swift in Sources */,
+				057FC1A62135278600D528EE /* CustomImageView.swift in Sources */,
+				053AE3691FBE1B5100B83B65 /* LogInViewController.swift in Sources */,
+				0586B4B820B50DC700C8C634 /* EmptyVCViewController.swift in Sources */,
 				053AE3671FBE1B5100B83B65 /* AppDelegate.swift in Sources */,
 				0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */,
 				05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */,
 				053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */,
+				053E4A1F20B78AB30005E0E4 /* TempViewController.swift in Sources */,
 				05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */,
 				05BFC1F41FC80BE90029BC2C /* CourseData.swift in Sources */,
+				053E4A1D20B784650005E0E4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +788,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SQDBFLM6WF;
 				INFOPLIST_FILE = DateCourse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = moon.DateCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -726,6 +805,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = SQDBFLM6WF;
 				INFOPLIST_FILE = DateCourse/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = moon.DateCourse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
