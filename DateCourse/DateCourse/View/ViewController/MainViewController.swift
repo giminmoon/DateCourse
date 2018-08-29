@@ -76,8 +76,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let selectedVC = storyboard.instantiateViewController(withIdentifier: "CourseInfoMap") as! CourseInfoMapViewController
-        selectedVC.selectedCourse = DataModel.sharedInstance.courses[indexPath.row]
+        let selectedVC = storyboard.instantiateViewController(withIdentifier: "CourseInfoMapNavigationController") as! UINavigationController
+        let courseInfoMapVC = selectedVC.topViewController as! CourseInfoMapViewController
+        courseInfoMapVC.selectedCourse = DataModel.sharedInstance.courses[indexPath.row]
         self.present(selectedVC, animated: true, completion: nil)
         collectionView.deselectItem(at: indexPath, animated: true)
     }

@@ -295,11 +295,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="dIj-Vg-OLC"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="zia-ax-H3W"/>
+                    <navigationItem key="navigationItem" id="Rue-xl-odT"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yuN-Ud-IQD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="598" y="-1132"/>
+            <point key="canvasLocation" x="1540" y="-1132.0197044334975"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="b8Y-Yq-WWm">
@@ -754,6 +754,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R7z-KG-Los" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2639" y="542"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="M6I-r1-w1G">
+            <objects>
+                <navigationController storyboardIdentifier="CourseInfoMapNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Kd2-9G-PoN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Map" id="zia-ax-H3W"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="25w-CV-jIq">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rf3-Tq-13e" kind="relationship" relationship="rootViewController" id="0XJ-HE-Ohr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gqY-ZK-ARD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="597.60000000000002" y="-1132.0197044334975"/>
         </scene>
     </scenes>
     <resources>

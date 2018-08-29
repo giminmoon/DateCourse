@@ -16,7 +16,7 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     
     static func newLogInViewController() -> LogInViewController {
-        let mainVC = UIStoryboard(name: "main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
+        let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
         return mainVC
     }
     
