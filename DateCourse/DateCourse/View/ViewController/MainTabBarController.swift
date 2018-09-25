@@ -19,10 +19,10 @@ class MainTabBarController: UITabBarController, UITabBarControllerDelegate{
     //method for selecting pop up ViewControllers under MainTabBarController
     func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
         if viewController is EmptyVCViewController {
-            if let newVC = tabBarController.storyboard?.instantiateViewController(withIdentifier: "newTabBarController") {
-                tabBarController.present(newVC, animated: true)
-                return false
-            }
+            let ItineraryVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ItineraryVC")
+            let navigationController = UINavigationController(rootViewController: ItineraryVC)
+            tabBarController.present(navigationController, animated: true)
+            return false
         }
         return true
     }

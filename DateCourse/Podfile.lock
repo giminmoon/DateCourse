@@ -41,7 +41,9 @@ PODS:
   - GoogleUtilities/Logger (5.2.2):
     - GoogleUtilities/Environment
   - GTMSessionFetcher/Core (1.2.0)
+  - JGProgressHUD (2.0.3)
   - leveldb-library (1.20)
+  - SCLAlertView (0.8)
 
 DEPENDENCIES:
   - Alamofire
@@ -52,6 +54,8 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlacePicker
   - GooglePlaces
+  - JGProgressHUD
+  - SCLAlertView
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
@@ -67,8 +71,10 @@ SPEC CHECKSUMS:
   GooglePlaces: 3d06e6c99654545b4738ce49648745779c25f2ef
   GoogleUtilities: 06b66f9567769a7958db20a92f0128b2843e49d5
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
+  JGProgressHUD: 12b20a8f4ffe05258f8635c1ab92816e451f904d
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
 
-PODFILE CHECKSUM: d1bf4d015b50e883b317985f4f584e10cfda26a9
+PODFILE CHECKSUM: da0bafd83e4e88a814aef14185234c779ee34319
 
 COCOAPODS: 1.4.0

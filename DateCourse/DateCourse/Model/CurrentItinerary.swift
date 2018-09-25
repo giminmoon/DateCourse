@@ -10,19 +10,64 @@ import Foundation
 import GoogleMaps
 import GooglePlacePicker
 
-class CurrentItineary {
+
+class Location {
+    
+    let googlePlaceHelper = GMSPlacesHelper.shared
+    let imageCache = NSCache<NSString, UIImage>()
+    var locationPlaceID: String?
+    
+    private var place: GMSPlace
+    private var firstPhoto: UIImage?
+    
+    init(withGMSPlace place: GMSPlace) {
+        self.place = place
+    }
+    
+    func getName() -> String {
+        return place.name
+    }
+    
+    func getAddress() -> String? {
+        return place.formattedAddress
+    }
+    
+    func getImage() -> UIImage? {
+        return firstPhoto
+    }
+    
+    func getPlaceID() -> String {
+        return place.placeID
+    }
+    
+    func setImage(image: UIImage) {
+        firstPhoto = image
+    }
+    
+    func getCoordinates() -> CLLocationCoordinate2D {
+        return place.coordinate
+    }
+}
+
+class CurrentItinerary {
     
     struct Notifications {
         static let LocationAdded   = Notification.Name("LocationAddedNotification")
         static let LocationRemoved  = Notification.Name("LocationRemovedNotification")
     }
  
-    static let shared = CurrentItineary()
+    static let shared = CurrentItinerary()
     
-    private var locations: [GMSPlace] = []
+    private var locations: [Location] = []
+    var pathway : GMSMutablePath? = nil
+    var lines : [GMSPolyline] = []
+    var markers : [GMSMarker] = []
+    
+    var mapView: GMSMapView?
     
     func addLocation(place: GMSPlace) {
-        self.locations.append(place)
+        let location = Location(withGMSPlace: place)
+        self.locations.append(location)
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: Notifications.LocationAdded, object: nil)
         }
@@ -33,6 +78,10 @@ class CurrentItineary {
         DispatchQueue.main.async {
             NotificationCenter.default.post(name: Notifications.LocationRemoved, object: nil)
         }
+    }
+    
+    func addPhotoToLocation(index: Int, image: UIImage) {
+        locations[index].setImage(image: image)
     }
     
     func removeAllLocations() {
@@ -47,7 +96,7 @@ class CurrentItineary {
         return locations.count
     }
     
-    func getLocation(atIndex index: Int) -> GMSPlace {
+    func getLocation(atIndex index: Int) -> Location {
         return locations[index]
     }
 }

@@ -23,36 +23,27 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
-        self.refresher = UIRefreshControl()
         self.collectionView!.alwaysBounceVertical = true
-        self.refresher.tintColor = UIColor.red
-        self.refresher.addTarget(self, action: #selector(loadData), for: .valueChanged)
-        self.collectionView!.addSubview(refresher)
         self.activityIndicator.startAnimating()
+        self.activityIndicator.hidesWhenStopped = true
         
         observeCourses()
     }
     
-    @objc func loadData(){
-        self.collectionView.reloadData()
-        stopRefresher()
-    }
-    
     func observeCourses() {
         //call firebase manager to observe data
+        let date = Date()
         print("before get courses")
         model.getInitialCourses {
-            print("after get courses")
-            self.collectionView.reloadData()
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.hidesWhenStopped = true
+            DispatchQueue.main.async {
+                self.collectionView.reloadData()
+                self.activityIndicator.stopAnimating()
+                let end = Date()
+                print("\(end.timeIntervalSince(date))")
+            }
         }
     }
     
-    func stopRefresher() {
-        self.refresher.endRefreshing()
-    }
-
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.courses.count
     }

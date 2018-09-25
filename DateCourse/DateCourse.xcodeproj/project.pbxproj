@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		05066B20213A50EB00BF4B48 /* UIViewController + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05066B1F213A50EB00BF4B48 /* UIViewController + Convenience.swift */; };
+		05066B24213A61F400BF4B48 /* RoundShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05066B23213A61F400BF4B48 /* RoundShadowView.swift */; };
+		0522FA6F2159D87F00FE7677 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0522FA6E2159D87F00FE7677 /* ProfileViewController.swift */; };
+		05293D8C214C9EB90059A845 /* Montserrat-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D7B214C9EB30059A845 /* Montserrat-ExtraBoldItalic.ttf */; };
+		05293D8D214C9EB90059A845 /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D7C214C9EB30059A845 /* Montserrat-Light.ttf */; };
+		05293D8E214C9EB90059A845 /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D7D214C9EB30059A845 /* Montserrat-Bold.ttf */; };
+		05293D8F214C9EB90059A845 /* Montserrat-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D7E214C9EB40059A845 /* Montserrat-ExtraLight.ttf */; };
+		05293D90214C9EB90059A845 /* Montserrat-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D7F214C9EB40059A845 /* Montserrat-SemiBoldItalic.ttf */; };
+		05293D91214C9EB90059A845 /* Montserrat-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D80214C9EB40059A845 /* Montserrat-BoldItalic.ttf */; };
+		05293D92214C9EB90059A845 /* Montserrat-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D81214C9EB50059A845 /* Montserrat-Thin.ttf */; };
+		05293D93214C9EB90059A845 /* Montserrat-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D82214C9EB50059A845 /* Montserrat-ExtraLightItalic.ttf */; };
+		05293D94214C9EB90059A845 /* Montserrat-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D83214C9EB60059A845 /* Montserrat-LightItalic.ttf */; };
+		05293D95214C9EB90059A845 /* Montserrat-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D84214C9EB60059A845 /* Montserrat-MediumItalic.ttf */; };
+		05293D96214C9EB90059A845 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D85214C9EB60059A845 /* Montserrat-ExtraBold.ttf */; };
+		05293D97214C9EB90059A845 /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D86214C9EB70059A845 /* Montserrat-SemiBold.ttf */; };
+		05293D98214C9EB90059A845 /* Montserrat-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D87214C9EB70059A845 /* Montserrat-ThinItalic.ttf */; };
+		05293D99214C9EB90059A845 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D88214C9EB70059A845 /* Montserrat-Medium.ttf */; };
+		05293D9A214C9EB90059A845 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D89214C9EB80059A845 /* Montserrat-Regular.ttf */; };
+		05293D9B214C9EB90059A845 /* Montserrat-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D8A214C9EB80059A845 /* Montserrat-BlackItalic.ttf */; };
+		05293D9C214C9EB90059A845 /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05293D8B214C9EB80059A845 /* Montserrat-Italic.ttf */; };
+		0529652C213B04410024DD79 /* UIView + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529652B213B04410024DD79 /* UIView + Convenience.swift */; };
+		0529652E213C71880024DD79 /* ItineraryCenterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0529652D213C71880024DD79 /* ItineraryCenterView.xib */; };
+		05296530213C72340024DD79 /* ItineraryCenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529652F213C72340024DD79 /* ItineraryCenterView.swift */; };
 		053AE3671FBE1B5100B83B65 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3661FBE1B5100B83B65 /* AppDelegate.swift */; };
 		053AE3691FBE1B5100B83B65 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3681FBE1B5100B83B65 /* LogInViewController.swift */; };
 		053AE36C1FBE1B5100B83B65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 053AE36A1FBE1B5100B83B65 /* Main.storyboard */; };
@@ -16,9 +39,14 @@
 		053AE3871FBE1B5100B83B65 /* DateCourseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3861FBE1B5100B83B65 /* DateCourseUITests.swift */; };
 		053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */; };
 		053AE3AB1FBEDF7600B83B65 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */; };
-		053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053D9F151FD1F501007A883F /* ItineraryCell.swift */; };
 		053E4A1D20B784650005E0E4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053E4A1C20B784650005E0E4 /* User.swift */; };
 		053E4A1F20B78AB30005E0E4 /* TempViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 053E4A1E20B78AB30005E0E4 /* TempViewController.swift */; };
+		055CA3492140BA530082E785 /* AddItineraryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA3472140BA530082E785 /* AddItineraryTableViewCell.swift */; };
+		055CA34A2140BA530082E785 /* AddItineraryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055CA3482140BA530082E785 /* AddItineraryTableViewCell.xib */; };
+		055CA34C2140BF520082E785 /* UIImage + Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA34B2140BF520082E785 /* UIImage + Convenience.swift */; };
+		055CA34F2140FC6E0082E785 /* LocationTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA34D2140FC6E0082E785 /* LocationTitleTableViewCell.swift */; };
+		055CA3502140FC6E0082E785 /* LocationTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 055CA34E2140FC6E0082E785 /* LocationTitleTableViewCell.xib */; };
+		055CA3562141A7040082E785 /* GMSPlaceClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055CA3552141A7040082E785 /* GMSPlaceClient.swift */; };
 		0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7C2068B338006581E3 /* FirebaseClient.swift */; };
 		0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */; };
 		0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */; };
@@ -26,10 +54,27 @@
 		057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */; };
 		057463621FCB683C00ACCF7A /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057463611FCB683C00ACCF7A /* test.swift */; };
 		057463641FCB87F300ACCF7A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 057463631FCB87F300ACCF7A /* CoreLocation.framework */; };
+		057E764E213F1770005E29C1 /* ItineraryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E764D213F1770005E29C1 /* ItineraryHeaderView.swift */; };
+		057E7650213F1778005E29C1 /* ItineraryFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057E764F213F1778005E29C1 /* ItineraryFooterView.swift */; };
+		057E7652213F1783005E29C1 /* ItineraryHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057E7651213F1783005E29C1 /* ItineraryHeaderView.xib */; };
+		057E7654213F178C005E29C1 /* ItineraryFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 057E7653213F178C005E29C1 /* ItineraryFooterView.xib */; };
 		057FC1A62135278600D528EE /* CustomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057FC1A52135278600D528EE /* CustomImageView.swift */; };
 		0586B4B820B50DC700C8C634 /* EmptyVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */; };
 		0586B4BA20B5141C00C8C634 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0586B4B920B5141C00C8C634 /* MainTabBarController.swift */; };
+		0587366621471D1600B435CE /* ItineraryTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587366521471D1600B435CE /* ItineraryTimelineView.swift */; };
+		0587366821471D2100B435CE /* ItineraryTimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0587366721471D2100B435CE /* ItineraryTimelineView.xib */; };
+		0587366A2147273600B435CE /* ItineraryArrowTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058736692147273600B435CE /* ItineraryArrowTableViewCell.swift */; };
+		0587366C2147274D00B435CE /* ItineraryArrowTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0587366B2147274D00B435CE /* ItineraryArrowTableViewCell.xib */; };
+		0587366E2147519F00B435CE /* ItineraryMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0587366D2147519F00B435CE /* ItineraryMapView.swift */; };
+		05873670214751AA00B435CE /* ItineraryMapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0587366F214751AA00B435CE /* ItineraryMapView.xib */; };
 		05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */; };
+		05B9D45821376B5200F99312 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D45721376B5200F99312 /* ProgressView.swift */; };
+		05B9D45A21376B5F00F99312 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D45921376B5F00F99312 /* AlertView.swift */; };
+		05B9D45D213A264600F99312 /* ItineraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D45C213A264600F99312 /* ItineraryCell.swift */; };
+		05B9D45F213A3D4500F99312 /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D45E213A3D4500F99312 /* NibLoadableView.swift */; };
+		05B9D461213A3DD400F99312 /* ItineraryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05B9D460213A3DD400F99312 /* ItineraryCell.xib */; };
+		05B9D463213A43A100F99312 /* CollectionView + Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D462213A43A100F99312 /* CollectionView + Cell.swift */; };
+		05B9D465213A466D00F99312 /* CALayer+Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9D464213A466D00F99312 /* CALayer+Border.swift */; };
 		05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */; };
 		05BFC1F41FC80BE90029BC2C /* CourseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F31FC80BE90029BC2C /* CourseData.swift */; };
 		05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05BFC1F71FC810720029BC2C /* CourseCell.swift */; };
@@ -60,6 +105,29 @@
 
 /* Begin PBXFileReference section */
 		009545DCF95E7CE6F7983C4F /* Pods_DateCourseUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DateCourseUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		05066B1F213A50EB00BF4B48 /* UIViewController + Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Convenience.swift"; sourceTree = "<group>"; };
+		05066B23213A61F400BF4B48 /* RoundShadowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundShadowView.swift; sourceTree = "<group>"; };
+		0522FA6E2159D87F00FE7677 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		05293D7B214C9EB30059A845 /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		05293D7C214C9EB30059A845 /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		05293D7D214C9EB30059A845 /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		05293D7E214C9EB40059A845 /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		05293D7F214C9EB40059A845 /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		05293D80214C9EB40059A845 /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		05293D81214C9EB50059A845 /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		05293D82214C9EB50059A845 /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		05293D83214C9EB60059A845 /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		05293D84214C9EB60059A845 /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		05293D85214C9EB60059A845 /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		05293D86214C9EB70059A845 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		05293D87214C9EB70059A845 /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		05293D88214C9EB70059A845 /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		05293D89214C9EB80059A845 /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		05293D8A214C9EB80059A845 /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		05293D8B214C9EB80059A845 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
+		0529652B213B04410024DD79 /* UIView + Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Convenience.swift"; sourceTree = "<group>"; };
+		0529652D213C71880024DD79 /* ItineraryCenterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryCenterView.xib; sourceTree = "<group>"; };
+		0529652F213C72340024DD79 /* ItineraryCenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCenterView.swift; sourceTree = "<group>"; };
 		053AE3631FBE1B5100B83B65 /* DateCourse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DateCourse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		053AE3661FBE1B5100B83B65 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		053AE3681FBE1B5100B83B65 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -75,9 +143,14 @@
 		053AE3881FBE1B5100B83B65 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		053AE3961FBE3AF700B83B65 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		053D9F151FD1F501007A883F /* ItineraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCell.swift; sourceTree = "<group>"; };
 		053E4A1C20B784650005E0E4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		053E4A1E20B78AB30005E0E4 /* TempViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempViewController.swift; sourceTree = "<group>"; };
+		055CA3472140BA530082E785 /* AddItineraryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItineraryTableViewCell.swift; sourceTree = "<group>"; };
+		055CA3482140BA530082E785 /* AddItineraryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddItineraryTableViewCell.xib; sourceTree = "<group>"; };
+		055CA34B2140BF520082E785 /* UIImage + Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Convenience.swift"; sourceTree = "<group>"; };
+		055CA34D2140FC6E0082E785 /* LocationTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationTitleTableViewCell.swift; sourceTree = "<group>"; };
+		055CA34E2140FC6E0082E785 /* LocationTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationTitleTableViewCell.xib; sourceTree = "<group>"; };
+		055CA3552141A7040082E785 /* GMSPlaceClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMSPlaceClient.swift; sourceTree = "<group>"; };
 		0564AF7C2068B338006581E3 /* FirebaseClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseClient.swift; sourceTree = "<group>"; };
 		0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		0574635B1FC90FF000ACCF7A /* addCourseItinerary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCourseItinerary.swift; sourceTree = "<group>"; };
@@ -85,10 +158,27 @@
 		0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseInfoItineraryViewController.swift; sourceTree = "<group>"; };
 		057463611FCB683C00ACCF7A /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		057463631FCB87F300ACCF7A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		057E764D213F1770005E29C1 /* ItineraryHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryHeaderView.swift; sourceTree = "<group>"; };
+		057E764F213F1778005E29C1 /* ItineraryFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryFooterView.swift; sourceTree = "<group>"; };
+		057E7651213F1783005E29C1 /* ItineraryHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryHeaderView.xib; sourceTree = "<group>"; };
+		057E7653213F178C005E29C1 /* ItineraryFooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryFooterView.xib; sourceTree = "<group>"; };
 		057FC1A52135278600D528EE /* CustomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImageView.swift; sourceTree = "<group>"; };
 		0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyVCViewController.swift; sourceTree = "<group>"; };
 		0586B4B920B5141C00C8C634 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = DateCourse/View/ViewController/MainTabBarController.swift; sourceTree = SOURCE_ROOT; };
+		0587366521471D1600B435CE /* ItineraryTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryTimelineView.swift; sourceTree = "<group>"; };
+		0587366721471D2100B435CE /* ItineraryTimelineView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryTimelineView.xib; sourceTree = "<group>"; };
+		058736692147273600B435CE /* ItineraryArrowTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryArrowTableViewCell.swift; sourceTree = "<group>"; };
+		0587366B2147274D00B435CE /* ItineraryArrowTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryArrowTableViewCell.xib; sourceTree = "<group>"; };
+		0587366D2147519F00B435CE /* ItineraryMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryMapView.swift; sourceTree = "<group>"; };
+		0587366F214751AA00B435CE /* ItineraryMapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryMapView.xib; sourceTree = "<group>"; };
 		05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCollectionViewCell.swift; sourceTree = "<group>"; };
+		05B9D45721376B5200F99312 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		05B9D45921376B5F00F99312 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		05B9D45C213A264600F99312 /* ItineraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItineraryCell.swift; sourceTree = "<group>"; };
+		05B9D45E213A3D4500F99312 /* NibLoadableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableView.swift; sourceTree = "<group>"; };
+		05B9D460213A3DD400F99312 /* ItineraryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItineraryCell.xib; sourceTree = "<group>"; };
+		05B9D462213A43A100F99312 /* CollectionView + Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionView + Cell.swift"; sourceTree = "<group>"; };
+		05B9D464213A466D00F99312 /* CALayer+Border.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Border.swift"; sourceTree = "<group>"; };
 		05BEFC7A1FC2C7EC00A6EE0E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		05BFC1F31FC80BE90029BC2C /* CourseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseData.swift; sourceTree = "<group>"; };
 		05BFC1F71FC810720029BC2C /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
@@ -134,6 +224,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05293D79214C9E830059A845 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				05293D7A214C9E8B0059A845 /* Montserrat */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		05293D7A214C9E8B0059A845 /* Montserrat */ = {
+			isa = PBXGroup;
+			children = (
+				05293D8A214C9EB80059A845 /* Montserrat-BlackItalic.ttf */,
+				05293D7D214C9EB30059A845 /* Montserrat-Bold.ttf */,
+				05293D80214C9EB40059A845 /* Montserrat-BoldItalic.ttf */,
+				05293D85214C9EB60059A845 /* Montserrat-ExtraBold.ttf */,
+				05293D7B214C9EB30059A845 /* Montserrat-ExtraBoldItalic.ttf */,
+				05293D7E214C9EB40059A845 /* Montserrat-ExtraLight.ttf */,
+				05293D82214C9EB50059A845 /* Montserrat-ExtraLightItalic.ttf */,
+				05293D8B214C9EB80059A845 /* Montserrat-Italic.ttf */,
+				05293D7C214C9EB30059A845 /* Montserrat-Light.ttf */,
+				05293D83214C9EB60059A845 /* Montserrat-LightItalic.ttf */,
+				05293D88214C9EB70059A845 /* Montserrat-Medium.ttf */,
+				05293D84214C9EB60059A845 /* Montserrat-MediumItalic.ttf */,
+				05293D89214C9EB80059A845 /* Montserrat-Regular.ttf */,
+				05293D86214C9EB70059A845 /* Montserrat-SemiBold.ttf */,
+				05293D7F214C9EB40059A845 /* Montserrat-SemiBoldItalic.ttf */,
+				05293D81214C9EB50059A845 /* Montserrat-Thin.ttf */,
+				05293D87214C9EB70059A845 /* Montserrat-ThinItalic.ttf */,
+			);
+			path = Montserrat;
+			sourceTree = "<group>";
+		};
 		053AE35A1FBE1B5100B83B65 = {
 			isa = PBXGroup;
 			children = (
@@ -193,6 +315,7 @@
 			children = (
 				057FC1A32135275A00D528EE /* Extensions */,
 				053AE3661FBE1B5100B83B65 /* AppDelegate.swift */,
+				05293D79214C9E830059A845 /* Fonts */,
 				053AE36D1FBE1B5100B83B65 /* Assets.xcassets */,
 				053AE3AA1FBEDF7600B83B65 /* GoogleService-Info.plist */,
 			);
@@ -203,7 +326,6 @@
 			isa = PBXGroup;
 			children = (
 				05BFC1F71FC810720029BC2C /* CourseCell.swift */,
-				053D9F151FD1F501007A883F /* ItineraryCell.swift */,
 				05900FE02065AB8300601D07 /* CourseCollectionViewCell.swift */,
 				0564AF7E206A2FDD006581E3 /* SectionHeaderView.swift */,
 			);
@@ -223,6 +345,7 @@
 				0574635F1FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift */,
 				0586B4B720B50DC700C8C634 /* EmptyVCViewController.swift */,
 				053E4A1E20B78AB30005E0E4 /* TempViewController.swift */,
+				0522FA6E2159D87F00FE7677 /* ProfileViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -231,6 +354,12 @@
 			isa = PBXGroup;
 			children = (
 				057FC1A52135278600D528EE /* CustomImageView.swift */,
+				05B9D45E213A3D4500F99312 /* NibLoadableView.swift */,
+				05B9D462213A43A100F99312 /* CollectionView + Cell.swift */,
+				05B9D464213A466D00F99312 /* CALayer+Border.swift */,
+				05066B1F213A50EB00BF4B48 /* UIViewController + Convenience.swift */,
+				0529652B213B04410024DD79 /* UIView + Convenience.swift */,
+				055CA34B2140BF520082E785 /* UIImage + Convenience.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -238,6 +367,25 @@
 		057FC1A42135276600D528EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				05B9D45C213A264600F99312 /* ItineraryCell.swift */,
+				05B9D460213A3DD400F99312 /* ItineraryCell.xib */,
+				05066B23213A61F400BF4B48 /* RoundShadowView.swift */,
+				0529652D213C71880024DD79 /* ItineraryCenterView.xib */,
+				0529652F213C72340024DD79 /* ItineraryCenterView.swift */,
+				057E764D213F1770005E29C1 /* ItineraryHeaderView.swift */,
+				057E764F213F1778005E29C1 /* ItineraryFooterView.swift */,
+				057E7651213F1783005E29C1 /* ItineraryHeaderView.xib */,
+				057E7653213F178C005E29C1 /* ItineraryFooterView.xib */,
+				055CA3472140BA530082E785 /* AddItineraryTableViewCell.swift */,
+				055CA3482140BA530082E785 /* AddItineraryTableViewCell.xib */,
+				055CA34D2140FC6E0082E785 /* LocationTitleTableViewCell.swift */,
+				055CA34E2140FC6E0082E785 /* LocationTitleTableViewCell.xib */,
+				0587366521471D1600B435CE /* ItineraryTimelineView.swift */,
+				0587366721471D2100B435CE /* ItineraryTimelineView.xib */,
+				058736692147273600B435CE /* ItineraryArrowTableViewCell.swift */,
+				0587366B2147274D00B435CE /* ItineraryArrowTableViewCell.xib */,
+				0587366D2147519F00B435CE /* ItineraryMapView.swift */,
+				0587366F214751AA00B435CE /* ItineraryMapView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,6 +408,9 @@
 				05BFC1F31FC80BE90029BC2C /* CourseData.swift */,
 				053E4A1C20B784650005E0E4 /* User.swift */,
 				05F0D62B21371F0F004D8339 /* CurrentItinerary.swift */,
+				05B9D45721376B5200F99312 /* ProgressView.swift */,
+				05B9D45921376B5F00F99312 /* AlertView.swift */,
+				055CA3552141A7040082E785 /* GMSPlaceClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -360,7 +511,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Gimin Moon";
 				TargetAttributes = {
 					053AE3621FBE1B5100B83B65 = {
@@ -404,10 +555,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				05293D94214C9EB90059A845 /* Montserrat-LightItalic.ttf in Resources */,
+				05293D90214C9EB90059A845 /* Montserrat-SemiBoldItalic.ttf in Resources */,
+				05293D8D214C9EB90059A845 /* Montserrat-Light.ttf in Resources */,
+				05293D8F214C9EB90059A845 /* Montserrat-ExtraLight.ttf in Resources */,
 				053AE3711FBE1B5100B83B65 /* LaunchScreen.storyboard in Resources */,
+				05293D9B214C9EB90059A845 /* Montserrat-BlackItalic.ttf in Resources */,
+				0587366C2147274D00B435CE /* ItineraryArrowTableViewCell.xib in Resources */,
+				057E7654213F178C005E29C1 /* ItineraryFooterView.xib in Resources */,
+				05293D99214C9EB90059A845 /* Montserrat-Medium.ttf in Resources */,
 				053AE3AB1FBEDF7600B83B65 /* GoogleService-Info.plist in Resources */,
+				05873670214751AA00B435CE /* ItineraryMapView.xib in Resources */,
+				05293D97214C9EB90059A845 /* Montserrat-SemiBold.ttf in Resources */,
+				05293D98214C9EB90059A845 /* Montserrat-ThinItalic.ttf in Resources */,
 				053AE36E1FBE1B5100B83B65 /* Assets.xcassets in Resources */,
+				055CA34A2140BA530082E785 /* AddItineraryTableViewCell.xib in Resources */,
+				05293D9C214C9EB90059A845 /* Montserrat-Italic.ttf in Resources */,
+				05293D92214C9EB90059A845 /* Montserrat-Thin.ttf in Resources */,
 				053AE36C1FBE1B5100B83B65 /* Main.storyboard in Resources */,
+				05293D9A214C9EB90059A845 /* Montserrat-Regular.ttf in Resources */,
+				05293D96214C9EB90059A845 /* Montserrat-ExtraBold.ttf in Resources */,
+				05293D95214C9EB90059A845 /* Montserrat-MediumItalic.ttf in Resources */,
+				0587366821471D2100B435CE /* ItineraryTimelineView.xib in Resources */,
+				057E7652213F1783005E29C1 /* ItineraryHeaderView.xib in Resources */,
+				05293D91214C9EB90059A845 /* Montserrat-BoldItalic.ttf in Resources */,
+				05B9D461213A3DD400F99312 /* ItineraryCell.xib in Resources */,
+				05293D8E214C9EB90059A845 /* Montserrat-Bold.ttf in Resources */,
+				05293D8C214C9EB90059A845 /* Montserrat-ExtraBoldItalic.ttf in Resources */,
+				0529652E213C71880024DD79 /* ItineraryCenterView.xib in Resources */,
+				055CA3502140FC6E0082E785 /* LocationTitleTableViewCell.xib in Resources */,
+				05293D93214C9EB90059A845 /* Montserrat-ExtraLightItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +674,8 @@
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JGProgressHUD/JGProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -505,6 +684,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -597,27 +778,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				055CA3562141A7040082E785 /* GMSPlaceClient.swift in Sources */,
+				0587366E2147519F00B435CE /* ItineraryMapView.swift in Sources */,
 				05BFC1FA1FC898F80029BC2C /* DataModel.swift in Sources */,
+				05B9D463213A43A100F99312 /* CollectionView + Cell.swift in Sources */,
 				057463621FCB683C00ACCF7A /* test.swift in Sources */,
+				055CA3492140BA530082E785 /* AddItineraryTableViewCell.swift in Sources */,
 				0586B4BA20B5141C00C8C634 /* MainTabBarController.swift in Sources */,
 				0564AF7D2068B338006581E3 /* FirebaseClient.swift in Sources */,
+				05066B20213A50EB00BF4B48 /* UIViewController + Convenience.swift in Sources */,
 				057463601FCA5AC800ACCF7A /* CourseInfoItineraryViewController.swift in Sources */,
+				05B9D45A21376B5F00F99312 /* AlertView.swift in Sources */,
 				05F0D62C21371F0F004D8339 /* CurrentItinerary.swift in Sources */,
+				0587366621471D1600B435CE /* ItineraryTimelineView.swift in Sources */,
+				0587366A2147273600B435CE /* ItineraryArrowTableViewCell.swift in Sources */,
 				05900FE12065AB8300601D07 /* CourseCollectionViewCell.swift in Sources */,
 				0574635C1FC90FF000ACCF7A /* addCourseItinerary.swift in Sources */,
 				05BFC1FC1FC909560029BC2C /* addCourseMap.swift in Sources */,
+				05B9D45D213A264600F99312 /* ItineraryCell.swift in Sources */,
 				053AE3971FBE3AF700B83B65 /* SignUpViewController.swift in Sources */,
 				0574635E1FCA5ABB00ACCF7A /* CourseInfoMapViewController.swift in Sources */,
+				057E764E213F1770005E29C1 /* ItineraryHeaderView.swift in Sources */,
 				057FC1A62135278600D528EE /* CustomImageView.swift in Sources */,
+				055CA34C2140BF520082E785 /* UIImage + Convenience.swift in Sources */,
+				057E7650213F1778005E29C1 /* ItineraryFooterView.swift in Sources */,
 				053AE3691FBE1B5100B83B65 /* LogInViewController.swift in Sources */,
 				0586B4B820B50DC700C8C634 /* EmptyVCViewController.swift in Sources */,
+				05B9D465213A466D00F99312 /* CALayer+Border.swift in Sources */,
 				053AE3671FBE1B5100B83B65 /* AppDelegate.swift in Sources */,
 				0564AF7F206A2FDD006581E3 /* SectionHeaderView.swift in Sources */,
 				05BEFC7B1FC2C7EC00A6EE0E /* MainViewController.swift in Sources */,
-				053D9F161FD1F501007A883F /* ItineraryCell.swift in Sources */,
+				05296530213C72340024DD79 /* ItineraryCenterView.swift in Sources */,
+				05066B24213A61F400BF4B48 /* RoundShadowView.swift in Sources */,
 				053E4A1F20B78AB30005E0E4 /* TempViewController.swift in Sources */,
 				05BFC1F81FC810720029BC2C /* CourseCell.swift in Sources */,
+				055CA34F2140FC6E0082E785 /* LocationTitleTableViewCell.swift in Sources */,
+				05B9D45F213A3D4500F99312 /* NibLoadableView.swift in Sources */,
+				0522FA6F2159D87F00FE7677 /* ProfileViewController.swift in Sources */,
+				0529652C213B04410024DD79 /* UIView + Convenience.swift in Sources */,
 				05BFC1F41FC80BE90029BC2C /* CourseData.swift in Sources */,
+				05B9D45821376B5200F99312 /* ProgressView.swift in Sources */,
 				053E4A1D20B784650005E0E4 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -687,6 +887,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -694,6 +895,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -744,6 +946,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -751,6 +954,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;

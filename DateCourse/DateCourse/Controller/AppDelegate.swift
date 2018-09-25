@@ -24,9 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
         FireBaseReference = Database.database().reference()
-        if let path = Bundle.main.path(forResource: "GoogleServie-Info", ofType: "plist"),
+        if let path = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist"),
             let myDict = NSDictionary(contentsOfFile: path) {
-                let key = myDict.object(forKey: "GOOGLE_API_ID") as! String
+                let key = myDict.object(forKey: "API_KEY") as! String
                 GMSPlacesClient.provideAPIKey(key)
                 GMSServices.provideAPIKey(key)
         }

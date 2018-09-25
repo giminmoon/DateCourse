@@ -29,13 +29,15 @@ class DataModel{
     
     func getInitialCourses(completion: @escaping () -> Void) {
         
-        Database.database().reference().child("courses").observe(.value, with: { (snapshot) in
-            self.courses.removeAll()
-            if let dictionary = snapshot.value as? [String: AnyObject] {
-                self.createCourseData(dictionary: dictionary)
-            }
-            completion()
-        })
+        DispatchQueue.global(qos: .userInteractive).async {
+            Database.database().reference().child("courses").observe(.value, with: { (snapshot) in
+                self.courses.removeAll()
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    self.createCourseData(dictionary: dictionary)
+                }
+                completion()
+            })
+        }
     }
     
     func createCourseData(dictionary: [String: AnyObject]) {

@@ -9,11 +9,13 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import JGProgressHUD
 
 class LogInViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var usernameField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    private var progressView = ProgressView.shared
     
     static func newLogInViewController() -> LogInViewController {
         let mainVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogInViewController") as! LogInViewController
@@ -29,9 +31,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
     }
 
     @IBAction func logInButtonTapped(_ sender: UIButton) {
+        let progressView = JGProgressHUD(style: .dark)
+        progressView.show(in: self.view)
         Auth.auth().signIn(withEmail: usernameField.text!, password: passwordField.text!){
             (user, error) in
             //wrong error credientials
+            self.progressView.dismissHUD()
+            
             if(error != nil){
                 let loginerrorAlert = UIAlertController(title: "Login error!", message: "\(error!.localizedDescription) Please try again.", preferredStyle: .alert)
                 loginerrorAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -46,9 +52,13 @@ class LogInViewController: UIViewController, UITextFieldDelegate {
                 let storyboard:UIStoryboard = UIStoryboard(name:"Main", bundle:nil)
                 let homeVC:UITabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! UITabBarController
                 
-                self.present(homeVC, animated: true, completion: nil)
+                self.present(homeVC, animated: true, completion: {
+            
+                })
             }
             else{
+               
+                
                 let notVerfiedAlert = UIAlertController(title:"Not verified", message: "Your account is pending verification. Please check your email and verify your account.", preferredStyle: .alert)
                 notVerfiedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(notVerfiedAlert, animated: true, completion: nil)
